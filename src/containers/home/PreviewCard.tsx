@@ -62,7 +62,7 @@ const PreviewCard: React.FC<{
 }> = ({ requisitionDetails, jobDetails, interviewSettings }) => {
 
 
-  const requisition = useSelector((state) => state.requisition);
+  const requisition = useSelector((state: any) => state.requisition);
 
   return (
     <Box p="1rem">
