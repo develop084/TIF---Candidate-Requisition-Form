@@ -94,10 +94,14 @@ const RequisitionDetailsForm: React.FC<{
           label="Number of openings"
           placeholder="Enter number of openings"
           name="noOfOpenings"
+          
           onChange={(event) => {
-            handleChange(event);
             const value = parseInt(event.target.value);
-            dispatch(updateNumberofOpenings(value));
+            if (!isNaN(value)) {
+              // Input is a valid number
+              handleChange(event);
+              dispatch(updateNumberofOpenings(value));
+            }
           }}
           onBlur={handleBlur}
           value={values?.noOfOpenings}
